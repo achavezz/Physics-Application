@@ -1,10 +1,10 @@
 {% extends "layout.html" %}
 {% block content %}
 <h1 class="text-center">Linear Motion</h1>
-  <form id="linearMotionForm" class="container mt-5" method="post" action="/submit">
+  <form id="linearMotionForm" class="container ps-5 position-absolute top-50 start-50 translate-middle" method="post" action="/lm_submit">
     <div class="row">
       <div class="col-md-6">
-        <select id="optionSelector" class="form-select mb-3">
+        <select id="optionSelector1" class="form-select mb-3">
           <option selected>Select the value we are looking for</option>
           <option value="Acceleration">Acceleration</option>
           <option value="Initial Velocity">Initial Velocity</option>
@@ -14,7 +14,7 @@
         </select>
 
       <div class="input-group">
-        <select class="form-select" id="dropdown">
+        <select id="optionSelector2" class="form-select">
           <option value="Acceleration">Acceleration</option>
           <option value="Initial Velocity">Initial Velocity</option>
           <option value="Final Velocity">Final Velocity</option>
@@ -25,7 +25,7 @@
       </div>
 
       <div class="input-group">
-        <select class="form-select" id="dropdown">
+        <select id="optionSelector3" class="form-select">
           <option value="Acceleration">Acceleration</option>
           <option value="Initial Velocity">Initial Velocity</option>
           <option value="Final Velocity">Final Velocity</option>
@@ -36,7 +36,7 @@
       </div>
 
       <div class="input-group">
-        <select class="form-select" id="dropdown">
+        <select id="optionSelector4" class="form-select">
           <option value="Acceleration">Acceleration</option>
           <option value="Initial Velocity">Initial Velocity</option>
           <option value="Final Velocity">Final Velocity</option>
@@ -46,7 +46,7 @@
         <input type="number" class="form-control" id="inputField" placeholder="Value">
       </div>
 
-        <button type="submit" class="btn btn-primary">Submit Form</button>
+        <button type="submit" class="btn btn-primary mt-3">Submit</button>
       </div>
     </div>
 </form>
