@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -6,8 +6,10 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/linear_motion')
+@app.route("/linear_motion", methods=["GET", "POST"])
 def linear_motion():
+    if request.method == "POST":
+        return render_template("lm_submit.html")
     return render_template('linear_motion.html')
 
 @app.route('/2d_motion')
