@@ -1,4 +1,54 @@
 {% extends "layout.html" %}
 {% block content %}
 <h1 class="text-center">Linear Motion</h1>
+  <form id="linearMotionForm" class="container mt-5" method="post" action="/submit">
+    <div class="row">
+      <div class="col-md-6">
+        <select id="optionSelector" class="form-select mb-3">
+          <option selected>Select the value we are looking for</option>
+          <option value="Acceleration">Acceleration</option>
+          <option value="Initial Velocity">Initial Velocity</option>
+          <option value="Final Velocity">Final Velocity</option>
+          <option value="Displacement">Displacement</option>
+          <option value="Time">Time</option>
+        </select>
+
+      <div class="input-group">
+        <select class="form-select" id="dropdown">
+          <option value="Acceleration">Acceleration</option>
+          <option value="Initial Velocity">Initial Velocity</option>
+          <option value="Final Velocity">Final Velocity</option>
+          <option value="Displacement">Displacement</option>
+          <option value="Time">Time</option>
+        </select>
+        <input type="number" class="form-control" id="inputField" placeholder="Value">
+      </div>
+
+      <div class="input-group">
+        <select class="form-select" id="dropdown">
+          <option value="Acceleration">Acceleration</option>
+          <option value="Initial Velocity">Initial Velocity</option>
+          <option value="Final Velocity">Final Velocity</option>
+          <option value="Displacement">Displacement</option>
+          <option value="Time">Time</option>
+        </select>
+      <input type="number" class="form-control" id="inputField" placeholder="Value">
+      </div>
+
+      <div class="input-group">
+        <select class="form-select" id="dropdown">
+          <option value="Acceleration">Acceleration</option>
+          <option value="Initial Velocity">Initial Velocity</option>
+          <option value="Final Velocity">Final Velocity</option>
+          <option value="Displacement">Displacement</option>
+          <option value="Time">Time</option>
+        </select>
+        <input type="number" class="form-control" id="inputField" placeholder="Value">
+      </div>
+
+        <button type="submit" class="btn btn-primary">Submit Form</button>
+      </div>
+    </div>
+</form>
+
 {% endblock %}
