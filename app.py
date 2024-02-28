@@ -9,7 +9,16 @@ def index():
 @app.route("/linear_motion", methods=["GET", "POST"])
 def linear_motion():
     if request.method == "POST":
-        return render_template("lm_submit.html")
+        lookup_value = request.form.get("lookup_value")
+        given_value_1 = request.form.get("value_1")
+        given_value_2 = request.form.get("value_2")
+        given_value_3 = request.form.get("value_3")
+        first_input = request.form.get("inputField1")
+        second_input = request.form.get("inputField2")
+        third_input = request.form.get("inputField3")
+
+        return render_template('lm_submit.html', lookup_value=lookup_value, given_value_1=given_value_1, first_input=first_input,
+                               given_value_2=given_value_2, second_input=second_input, given_value_3=given_value_3, third_input=third_input)
     return render_template('linear_motion.html')
 
 @app.route('/2d_motion')
