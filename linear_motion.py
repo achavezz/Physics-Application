@@ -4,6 +4,19 @@
 def first_kinematics_equation(missing_input, given_inputs):
     print("Using the first kinematics equation")
     
+    # original equation
+    if missing_input == 'final velocity':
+        velocity_change = given_inputs['acceleration'] * given_inputs['time']
+        usr_input = int(input("Enter the product of acceleration and time: "))
+        while usr_input != velocity_change:
+            usr_input = int(input("Try again: "))
+        
+        final_velocity = given_inputs['initial velocity'] + velocity_change
+        res = float(input("Now add the initial velocity to the product: "))
+        while res != final_velocity:
+            res = float(input("Try again: "))    
+        print("Correct!")
+
     # a = (v_f - v_i) / t
     if missing_input == 'acceleration':
         velocity_difference = given_inputs['final velocity'] - given_inputs['initial velocity']
@@ -27,19 +40,6 @@ def first_kinematics_equation(missing_input, given_inputs):
         time = round(velocity_difference / given_inputs['acceleration'], 2)
         res = float(input("Now divide the velocity difference by acceleration: "))
         while res != time:
-            res = float(input("Try again: "))    
-        print("Correct!")
-    
-    # original equation
-    if missing_input == 'final velocity':
-        velocity_change = given_inputs['acceleration'] * given_inputs['time']
-        usr_input = int(input("Enter the product of acceleration and time: "))
-        while usr_input != velocity_change:
-            usr_input = int(input("Try again: "))
-        
-        final_velocity = given_inputs['initial velocity'] + velocity_change
-        res = float(input("Now add the initial velocity to the product: "))
-        while res != final_velocity:
             res = float(input("Try again: "))    
         print("Correct!")
     
