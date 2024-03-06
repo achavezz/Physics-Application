@@ -15,6 +15,8 @@ def linear_motion():
     first_input = request.form.get("inputField1")
     second_input = request.form.get("inputField2")
     third_input = request.form.get("inputField3")
+
+    
     return render_template('linear_motion.html')
 
 @app.route('/2d_motion')
