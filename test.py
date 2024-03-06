@@ -1,10 +1,10 @@
-import helpers
+import linear_motion
 
-missing_value = "acceleration"
+missing_value = "initial velocity"
 givens = {
-    "initial velocity" : 10,
-    "final velocity" : 4,
-    "time" : 5
+    "final velocity" : 10,
+    "time" : 4,
+    "acceleration" : 5
     }
 
-helpers.determine_equation(missing_value, givens)
+linear_motion.determine_equation(missing_value, givens)
