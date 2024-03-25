@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% block content %}
   <h1 class="text-center">Linear Motion</h1>
-    <form id="linearMotionForm" class="container ps-5 position-absolute top-50 start-50 translate-middle">
+    <form id="linearMotionForm" class="container ps-5 position-absolute top-50 start-50 translate-middle" action="/linear_motion" method="post">
       <div class="row">
         <div class="col-md-6">
           <select name="lookup_value" class="form-select mb-3">
@@ -47,8 +47,7 @@
         </div>
       
         <button type="submit" class="btn btn-primary mt-3">Submit</button>
-
+        </div>
       </div>
-    </div>
-  </form>
+    </form>
 {% endblock %}

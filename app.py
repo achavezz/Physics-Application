@@ -1,3 +1,4 @@
+import os
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
@@ -6,15 +7,23 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route("/linear_motion")
+@app.route("/linear_motion", methods=['POST', 'GET'])
 def linear_motion():
-    lookup_value = request.form.get("lookup_value")
-    given_value_1 = request.form.get("value_1")
-    given_value_2 = request.form.get("value_2")
-    given_value_3 = request.form.get("value_3")
-    first_input = request.form.get("inputField1")
-    second_input = request.form.get("inputField2")
-    third_input = request.form.get("inputField3")
+    if request.method == "POST":
+        lookup_value = request.form.get("lookup_value")
+        given_value_1 = request.form.get("value_1")
+        given_value_2 = request.form.get("value_2")
+        given_value_3 = request.form.get("value_3")
+        first_input = request.form.get("inputField1")
+        second_input = request.form.get("inputField2")
+        third_input = request.form.get("inputField3")
+        values = {
+            given_value_1 : first_input,
+            given_value_2 : second_input,
+            given_value_3 : third_input,
+        }
+        
+        return render_template('lm_submit.html', lookup_value=lookup_value, inputs=values)
 
     
     return render_template('linear_motion.html')
