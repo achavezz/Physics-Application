@@ -1,11 +1,6 @@
 {% extends "layout.html" %}
 {% block content %}
     <h1>Linear Motion Submission</h1>
-    <p>
-        Missing value: {{lookup_value}}
-        {% for key in inputs %}
-            {{key}}: {{ inputs[key]}} 
-        {% endfor %}
-    </p>
-
+    <div id="inputs" data-dict="{{ dict }}" data-missing_value="{{ lookup_value }}"></div>
+    <script src="/static/script.js"></script>
 {% endblock %}

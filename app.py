@@ -1,4 +1,4 @@
-import os
+import os, json
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
@@ -17,13 +17,13 @@ def linear_motion():
         first_input = request.form.get("inputField1")
         second_input = request.form.get("inputField2")
         third_input = request.form.get("inputField3")
-        values = {
+        dict = {
             given_value_1 : first_input,
             given_value_2 : second_input,
             given_value_3 : third_input,
         }
-        
-        return render_template('lm_submit.html', lookup_value=lookup_value, inputs=values)
+        json_dict = json.dumps(dict)
+        return render_template('lm_submit.html', lookup_value=lookup_value, dict=json_dict)
 
     
     return render_template('linear_motion.html')
